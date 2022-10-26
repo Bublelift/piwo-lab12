@@ -3,6 +3,7 @@ package pwo.seq;
 import java.math.BigDecimal;
 
 public class LucasGenerator extends FibonacciGenerator {
+
     public LucasGenerator() {
         current = new BigDecimal(2);
         f_2 = new BigDecimal(2);
@@ -22,5 +23,14 @@ public class LucasGenerator extends FibonacciGenerator {
             return new BigDecimal(2);
         }
         return super.nextTerm();
- }
+    }
+
+    @Override
+    public BigDecimal previousTerm() {
+        if (lastIndex == 0) {
+            lastIndex++;
+            return new BigDecimal(2);
+        }
+        return super.previousTerm();
+    }
 }

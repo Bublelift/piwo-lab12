@@ -21,7 +21,9 @@ public class Generator implements SequenceGenerator {
         if (i < 0) {
             throw new IllegalArgumentException();
         }
-        if (i < lastIndex) {
+        if (i == (lastIndex - 2)) {
+            previousTerm();
+        } else if (i < lastIndex) {
             reset();
         }
         while (lastIndex <= i) {
@@ -33,5 +35,10 @@ public class Generator implements SequenceGenerator {
     @Override
     public BigDecimal nextTerm() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public BigDecimal previousTerm() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
